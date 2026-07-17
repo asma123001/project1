@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hello Cutiesss</title>
+  <title>About Cutiesss</title>
   <style>
     * {
       box-sizing: border-box;
@@ -25,6 +25,22 @@
         radial-gradient(circle at 50% 92%, rgba(181, 238, 255, 0.9), transparent 19rem),
         linear-gradient(135deg, #ffc7dd 0%, #fff1ad 45%, #b9efff 100%);
       overflow: hidden;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 22px;
+      pointer-events: none;
+      border: 2px dashed rgba(255, 255, 255, 0.82);
+      border-radius: 34px;
+    }
+
+    body::after {
+      inset: 36px;
+      border-style: solid;
+      border-color: rgba(255, 121, 171, 0.18);
     }
 
     .nav {
@@ -62,25 +78,9 @@
       transform: translateY(-2px);
     }
 
-    body::before,
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 22px;
-      pointer-events: none;
-      border: 2px dashed rgba(255, 255, 255, 0.82);
-      border-radius: 34px;
-    }
-
-    body::after {
-      inset: 36px;
-      border-style: solid;
-      border-color: rgba(255, 121, 171, 0.18);
-    }
-
     .card {
       position: relative;
-      width: min(90vw, 610px);
+      width: min(90vw, 660px);
       padding: clamp(36px, 8vw, 62px) clamp(24px, 7vw, 52px);
       text-align: center;
       background:
@@ -95,33 +95,8 @@
       animation: floaty 4s ease-in-out infinite;
     }
 
-    .card::before,
-    .card::after {
-      content: "";
-      position: absolute;
-      top: -28px;
-      width: 78px;
-      height: 58px;
-      background: #ff7eb3;
-      border-radius: 60% 40% 55% 45%;
-      box-shadow: 0 10px 24px rgba(255, 88, 152, 0.22);
-      transform: rotate(-18deg);
-    }
-
-    .card::before {
-      left: 48px;
-    }
-
-    .card::after {
-      right: 48px;
-      transform: rotate(18deg);
-      background: #73d9f4;
-    }
-
     .tag {
       display: inline-flex;
-      align-items: center;
-      gap: 8px;
       min-height: 34px;
       padding: 8px 16px;
       margin-bottom: 20px;
@@ -135,59 +110,37 @@
       box-shadow: 0 8px 18px rgba(255, 193, 92, 0.22);
     }
 
-    .face {
-      font-size: clamp(72px, 18vw, 128px);
-      line-height: 1;
-      margin-bottom: 16px;
-      filter: drop-shadow(0 10px 12px rgba(255, 150, 190, 0.32));
-    }
-
     h1 {
-      font-size: clamp(48px, 12vw, 88px);
-      line-height: 0.98;
+      font-size: clamp(44px, 11vw, 82px);
+      line-height: 1;
       letter-spacing: 0;
       color: #ff4f96;
-      text-shadow:
-        4px 4px 0 #ffffff,
-        0 10px 22px rgba(255, 97, 160, 0.22);
+      text-shadow: 4px 4px 0 #ffffff, 0 10px 22px rgba(255, 97, 160, 0.22);
     }
 
     p {
-      max-width: 430px;
+      max-width: 500px;
       margin: 20px auto 0;
-      font-size: clamp(18px, 5vw, 25px);
-      line-height: 1.4;
+      font-size: clamp(18px, 5vw, 24px);
+      line-height: 1.45;
       color: #705163;
     }
 
-    .hearts {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin-top: 28px;
-    }
-
-    .heart {
-      width: 34px;
-      height: 34px;
+    .mini-list {
       display: grid;
-      place-items: center;
-      color: #ffffff;
-      font-weight: 900;
-      background: #ff7eb3;
-      border-radius: 50%;
-      box-shadow: 0 8px 16px rgba(255, 88, 152, 0.2);
-      animation: bounce 1.8s ease-in-out infinite;
+      gap: 12px;
+      max-width: 460px;
+      margin: 28px auto 0;
     }
 
-    .heart:nth-child(2) {
-      background: #7bdff2;
-      animation-delay: 0.16s;
-    }
-
-    .heart:nth-child(3) {
-      background: #f7d85c;
-      animation-delay: 0.32s;
+    .mini-list span {
+      padding: 13px 16px;
+      color: #7a4260;
+      font-weight: 800;
+      background: rgba(255, 255, 255, 0.68);
+      border: 2px solid rgba(255, 255, 255, 0.9);
+      border-radius: 18px;
+      box-shadow: 0 10px 22px rgba(255, 126, 179, 0.12);
     }
 
     .sparkle {
@@ -204,8 +157,6 @@
     .sparkle:nth-child(2) { top: 24%; right: 15%; animation-delay: 0.5s; }
     .sparkle:nth-child(3) { bottom: 18%; left: 14%; animation-delay: 1s; }
     .sparkle:nth-child(4) { bottom: 24%; right: 18%; animation-delay: 1.5s; }
-    .sparkle:nth-child(5) { top: 53%; left: 8%; animation-delay: 0.8s; }
-    .sparkle:nth-child(6) { top: 58%; right: 8%; animation-delay: 1.3s; }
 
     @keyframes floaty {
       0%, 100% { transform: translateY(0); }
@@ -213,19 +164,8 @@
     }
 
     @keyframes twinkle {
-      0%, 100% {
-        opacity: 0.35;
-        transform: scale(0.65);
-      }
-      50% {
-        opacity: 1;
-        transform: scale(1.35);
-      }
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-8px) rotate(8deg); }
+      0%, 100% { opacity: 0.35; transform: scale(0.65); }
+      50% { opacity: 1; transform: scale(1.35); }
     }
 
     @media (max-width: 520px) {
@@ -233,21 +173,6 @@
       body::after {
         inset: 12px;
         border-radius: 24px;
-      }
-
-      .card::before,
-      .card::after {
-        width: 54px;
-        height: 42px;
-        top: -20px;
-      }
-
-      .card::before {
-        left: 28px;
-      }
-
-      .card::after {
-        right: 28px;
       }
 
       .nav {
@@ -268,24 +193,21 @@
   <span class="sparkle"></span>
   <span class="sparkle"></span>
   <span class="sparkle"></span>
-  <span class="sparkle"></span>
-  <span class="sparkle"></span>
 
   <nav class="nav" aria-label="Main pages">
-    <a class="active" href="index.html">Home</a>
-    <a href="about.html">About</a>
+    <a href="index.html">Home</a>
+    <a class="active" href="about.html">About</a>
     <a href="contact.html">Contact</a>
   </nav>
 
-  <main class="card" aria-label="Cute greeting">
-    <div class="tag">made with tiny sparkle energy</div>
-    <div class="face" aria-hidden="true">:D</div>
-    <h1>hello cutiesss</h1>
-    <p>sending soft sunshine, sweet vibes, and the prettiest little smile your way.</p>
-    <div class="hearts" aria-hidden="true">
-      <span class="heart">x</span>
-      <span class="heart">o</span>
-      <span class="heart">x</span>
+  <main class="card" aria-label="About page">
+    <div class="tag">about this tiny place</div>
+    <h1>sweet little vibes</h1>
+    <p>This page is all about soft colors, happy greetings, and making the screen feel like a tiny treat.</p>
+    <div class="mini-list" aria-label="Cute details">
+      <span>pastel sunshine</span>
+      <span>sparkly smiles</span>
+      <span>extra cozy energy</span>
     </div>
   </main>
 </body>
